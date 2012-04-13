@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdio>
 #include <cstring>
-#include <unistd.h>
+#include <cstdlib>
 
 #include "tty.h"
 
