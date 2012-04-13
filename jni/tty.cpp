@@ -173,9 +173,11 @@ static char const *ERROR_MESSAGES[COUNT_OF_TTY_ERRORS] = {
 	"no error", // TTY_ERR_OK
 	"inavlid argument",
 	"operation not permitted",
+	"access denied",
 	"I/O error",
 	"insufficient memory",
 	"interrupted",
+	"no such device",
 	"unknown error",
 };
 
@@ -238,8 +240,10 @@ static inline int to_ttyerror(int err) {
 	case EINTR:  return TTY_ERR_INTERRUPTED;
 	case EINVAL: return TTY_ERR_INVALID_ARGUMENT;
 	case EPERM:  return TTY_ERR_NO_PERMISSION;
+	case EACCES: return TTY_ERR_ACCESS_DENIED;
 	case EIO:    return TTY_ERR_IO_ERROR;
 	case ENOMEM: return TTY_ERR_INSUFFICIENT_MEMORY;
+	case ENOENT: return TTY_ERR_NO_SUCH_DEVICE;
 	default:     return TTY_ERR_UNKNOWN;
 	}
 }
