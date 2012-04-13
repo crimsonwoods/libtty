@@ -1,7 +1,7 @@
 #ifndef LIB_TTY_H_
 #define LIB_TTY_H_
 
-#include <stdlib.h>
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
